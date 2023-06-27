@@ -1,0 +1,57 @@
+name: Get my traffic stats
+
+on:
+  push:
+    branches:
+      - main
+      - pushstats
+      - stats
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    permissions:
+      contents: write
+
+    steps:
+      - uses: actions/checkout@v3
+        with:
+          ref: stats
+
+      - name: gh login
+        run: echo "${{ secrets.SECRET_TOKEN }}" | gh auth login --with-token
+
+      - name: parse latest clone and view count
+        run: |
+            curl --user "${{ github.actor }}:${{ secrets.SECRET_TOKEN }}" \
+                -H "Accept: application/vnd.github.v3+json" \
+                https://api.github.com/repos/${{ github.repository }}/traffic/clones \
+                > clones.json
+            curl --user "${{ github.actor }}:${{ secrets.SECRET_TOKEN }}" \
+                -H "Accept: application/vnd.github.v3+json" \
+                https://api.github.com/repos/${{ github.repository }}/traffic/views \
+                > views.json
+
+      - name: grab clones.json and views.json and rename them
+        run: |
+            curl https://raw.githubusercontent.com/${{ github.repository }}/stats/clones.json > clones_before.json
+            if cat clones_before.json | grep '404: Not Found'; then
+                cp clones.json clones_before.json
+            fi;
+            curl https://raw.githubusercontent.com/${{ github.repository }}/stats/views.json > views_before.json
+            if cat views_before.json | grep '404: Not Found'; then
+                cp views.json views_before.json
+            fi;
+    
+      - name: update clone.json
+        run: |
+            python3 main.py
+
+      - name: remove before files
+        run: |
+            rm clones_before.json views_before.json
+                        
+      - uses: stefanzweifel/git-auto-commit-action@v4
+        with:
+          branch: stats
