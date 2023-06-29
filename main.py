@@ -30,7 +30,7 @@ import json
 
 def load_json(stats):
     'loads newly pulled and saved json'
-    with open(f'{stats}._nowjson', 'r', encoding='utf-8') as file:
+    with open(f'{stats}_now.json', 'r', encoding='utf-8') as file:
         now = json.load(file)
     with open(f'{stats}_before.json', 'r', encoding='utf-8') as file:
         before = json.load(file)
