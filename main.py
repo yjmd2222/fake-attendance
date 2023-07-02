@@ -1,4 +1,5 @@
 '''
+MIT LICENSE
 LICENSE PATH = https://raw.githubusercontent.com/yjmd2222/fake-attendance/stats/github-clone-count-badge-license.md
 
 Python script to update traffic data on given repository
