@@ -1,29 +1,8 @@
 '''
-MIT License
-
-Copyright (c) 2021 Monirul Shawon
-Copyright (c) 2023 yjmd2222
-
-Permission is hereby granted, free of charge, to any person obtaining a copy
-of this software and associated documentation files (the "Software"), to deal
-in the Software without restriction, including without limitation the rights
-to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
-copies of the Software, and to permit persons to whom the Software is
-furnished to do so, subject to the following conditions:
-
-The above copyright notice and this permission notice shall be included in all
-copies or substantial portions of the Software.
-
-THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
-IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
-FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
-AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
-LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
-OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
-SOFTWARE.
+LICENSE PATH = https://raw.githubusercontent.com/yjmd2222/fake-attendance/stats/github-clone-count-badge-license.md
 
 Python script to update traffic data on given repository
-Original code by @MShawon
+Original code by @MShawon for simple clone count at https://github.com/MShawon/github-clone-count-badge
 Modified by @yjmd2222 to support total view counts as well as latest clone and view counts
 '''
 import json
