@@ -27,6 +27,7 @@ Original code by @MShawon for simple clone count at https://github.com/MShawon/g
 Modified by @yjmd2222 to support total view counts as well as latest clone and view counts
 
 See https://raw.githubusercontent.com/yjmd2222/fake-attendance/main/.github/workflows/stats.yml for whole process
+(also copyrighted under the same license)
 '''
 import json
 
