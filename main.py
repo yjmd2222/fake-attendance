@@ -41,17 +41,24 @@ def load_json(stats):
 
 def timestamp_list(stats, before):
     'makes list of timestamps to compare new and saved json data by date'
-    return {before[stats][i]['timestamp']: i for i in range(len(before[stats]))}
+    # desc
+    return [before[stats][i]['timestamp'] for i in range(len(before[stats]))]
 
 def append_json(stats, timestamps, before, now):
     'uses above timestamp list to merge new data into the previous data'
+    # desc
     latest = dict(before)
-    for i in range(len(now[stats])):
-        timestamp = now[stats][i]['timestamp']
-        if timestamp in timestamps:
-            latest[stats][timestamps[timestamp]] = now[stats][i]
+    # asc, last five dates
+    now = sorted(now[stats], key=lambda dict_: dict_['timestamp'], reverse=True)[:5]
+    for i in range(len(now)):
+        # asc
+        timestamp = now[i]['timestamp']
+        # asc item in desc list
+        if timestamp in timestamps[:5]: # update recent five dates if not new
+            latest[stats][timestamps.index(timestamp)] = now[i]
+        # new date
         else:
-            latest[stats].append(now[stats][i])
+            latest[stats].append(now[i])
     return latest
 
 def sum_counts(latest, stats):
