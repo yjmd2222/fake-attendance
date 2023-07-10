@@ -69,8 +69,8 @@
         },
         {
             "timestamp": "2023-06-26T00:00:00Z",
-            "count": 192,
-            "uniques": 1
+            "count": 286,
+            "uniques": 2
         },
         {
             "timestamp": "2023-06-25T00:00:00Z",
@@ -84,18 +84,18 @@
         },
         {
             "timestamp": "2023-06-23T00:00:00Z",
-            "count": 49,
+            "count": 53,
             "uniques": 1
         },
         {
             "timestamp": "2023-06-22T00:00:00Z",
-            "count": 112,
+            "count": 139,
             "uniques": 2
         },
         {
             "timestamp": "2023-06-21T00:00:00Z",
-            "count": 4,
-            "uniques": 1
+            "count": 73,
+            "uniques": 4
         },
         {
             "timestamp": "2023-06-20T00:00:00Z",
